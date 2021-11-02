@@ -4,8 +4,10 @@ specifiers:
   '@vitejs/plugin-vue': ^1.9.3
   typescript: ^4.4.3
   vite: ^2.6.4
+  vite-plugin-windicss: ^1.4.12
   vue: ^3.2.16
   vue-tsc: ^0.3.0
+  windicss: ^3.2.0
 
 dependencies:
   vue: 3.2.21
@@ -14,9 +16,17 @@ devDependencies:
   '@vitejs/plugin-vue': 1.9.4_vite@2.6.13
   typescript: 4.4.4
   vite: 2.6.13
+  vite-plugin-windicss: 1.4.12_vite@2.6.13
   vue-tsc: 0.3.0_typescript@4.4.4
+  windicss: 3.2.0
 
 packages:
+
+  /@antfu/utils/0.3.0:
+    resolution: {integrity: sha1-YwbEO1Kog72Olz4+2N1kJIQYvMQ=, tarball: '@antfu/utils/download/@antfu/utils-0.3.0.tgz'}
+    dependencies:
+      '@types/throttle-debounce': 2.1.0
+    dev: true
 
   /@babel/helper-validator-identifier/7.15.7:
     resolution: {integrity: sha1-Ig35k7/pBKSmsCq08zhaXr9uI4k=, tarball: '@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.15.7.tgz'}
@@ -50,6 +60,31 @@ packages:
 
   /@emmetio/scanner/1.0.0:
     resolution: {integrity: sha1-Blsq9iM/50dNRII+PeuJckr0K18=, tarball: '@emmetio/scanner/download/@emmetio/scanner-1.0.0.tgz'}
+    dev: true
+
+  /@nodelib/fs.scandir/2.1.5:
+    resolution: {integrity: sha1-dhnC6yGyVIP20WdUi0z9WnSIw9U=, tarball: '@nodelib/fs.scandir/download/@nodelib/fs.scandir-2.1.5.tgz'}
+    engines: {node: '>= 8'}
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      run-parallel: 1.2.0
+    dev: true
+
+  /@nodelib/fs.stat/2.0.5:
+    resolution: {integrity: sha1-W9Jir5Tp0lvR5xsF3u1Eh2oiLos=, tarball: '@nodelib/fs.stat/download/@nodelib/fs.stat-2.0.5.tgz'}
+    engines: {node: '>= 8'}
+    dev: true
+
+  /@nodelib/fs.walk/1.2.8:
+    resolution: {integrity: sha1-6Vc36LtnRt3t9pxVaVNJTxlv5po=, tarball: '@nodelib/fs.walk/download/@nodelib/fs.walk-1.2.8.tgz?cache=0&sync_timestamp=1634048785407&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40nodelib%2Ffs.walk%2Fdownload%2F%40nodelib%2Ffs.walk-1.2.8.tgz'}
+    engines: {node: '>= 8'}
+    dependencies:
+      '@nodelib/fs.scandir': 2.1.5
+      fastq: 1.13.0
+    dev: true
+
+  /@types/throttle-debounce/2.1.0:
+    resolution: {integrity: sha1-HD32JL/Eti+ZLTASuExW1B6rN3Y=, tarball: '@types/throttle-debounce/download/@types/throttle-debounce-2.1.0.tgz'}
     dev: true
 
   /@vitejs/plugin-vue/1.9.4_vite@2.6.13:
@@ -188,10 +223,41 @@ packages:
   /@vue/shared/3.2.21:
     resolution: {integrity: sha1-TNgMDmLPZaetqyRJ6GtvDLM6Ews=, tarball: '@vue/shared/download/@vue/shared-3.2.21.tgz'}
 
+  /@windicss/config/1.4.12:
+    resolution: {integrity: sha1-MoQv4Am2QXawBMg6k8UYkGYELDM=, tarball: '@windicss/config/download/@windicss/config-1.4.12.tgz'}
+    dependencies:
+      debug: 4.3.2
+      jiti: 1.12.9
+      windicss: 3.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@windicss/plugin-utils/1.4.12:
+    resolution: {integrity: sha1-mSk2kBjIZg7i8hjEfPpLg/UXTFk=, tarball: '@windicss/plugin-utils/download/@windicss/plugin-utils-1.4.12.tgz'}
+    dependencies:
+      '@antfu/utils': 0.3.0
+      '@windicss/config': 1.4.12
+      debug: 4.3.2
+      fast-glob: 3.2.7
+      magic-string: 0.25.7
+      micromatch: 4.0.4
+      windicss: 3.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /acorn/7.4.1:
     resolution: {integrity: sha1-/q7SVZc9LndVW4PbwIhRpsY1IPo=, tarball: acorn/download/acorn-7.4.1.tgz}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
+
+  /ansi-styles/4.3.0:
+    resolution: {integrity: sha1-7dgDYornHATIWuegkG7a00tkiTc=, tarball: ansi-styles/download/ansi-styles-4.3.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      color-convert: 2.0.1
     dev: true
 
   /asap/2.0.6:
@@ -209,6 +275,13 @@ packages:
       '@babel/types': 7.16.0
     dev: true
 
+  /braces/3.0.2:
+    resolution: {integrity: sha1-NFThpGLujVmeI23zNs2epPiv4Qc=, tarball: braces/download/braces-3.0.2.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      fill-range: 7.0.1
+    dev: true
+
   /call-bind/1.0.2:
     resolution: {integrity: sha1-sdTonmiBGcPJqQOtMKuy9qkZvjw=, tarball: call-bind/download/call-bind-1.0.2.tgz}
     dependencies:
@@ -216,10 +289,29 @@ packages:
       get-intrinsic: 1.1.1
     dev: true
 
+  /chalk/4.1.2:
+    resolution: {integrity: sha1-qsTit3NKdAhnrrFr8CqtVWoeegE=, tarball: chalk/download/chalk-4.1.2.tgz?cache=0&sync_timestamp=1634019710993&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fchalk%2Fdownload%2Fchalk-4.1.2.tgz}
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+    dev: true
+
   /character-parser/2.2.0:
     resolution: {integrity: sha1-x84o821LzZdE5f/CxfzeHHMmH8A=, tarball: character-parser/download/character-parser-2.2.0.tgz}
     dependencies:
       is-regex: 1.1.4
+    dev: true
+
+  /color-convert/2.0.1:
+    resolution: {integrity: sha1-ctOmjVmMm9s68q0ehPIdiWq9TeM=, tarball: color-convert/download/color-convert-2.0.1.tgz}
+    engines: {node: '>=7.0.0'}
+    dependencies:
+      color-name: 1.1.4
+    dev: true
+
+  /color-name/1.1.4:
+    resolution: {integrity: sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=, tarball: color-name/download/color-name-1.1.4.tgz}
     dev: true
 
   /constantinople/4.0.1:
@@ -232,6 +324,18 @@ packages:
   /csstype/2.6.18:
     resolution: {integrity: sha1-mAqLUwhfNK8xNBCvBk8r0kF4Qhg=, tarball: csstype/download/csstype-2.6.18.tgz?cache=0&sync_timestamp=1634049282128&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcsstype%2Fdownload%2Fcsstype-2.6.18.tgz}
     dev: false
+
+  /debug/4.3.2:
+    resolution: {integrity: sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=, tarball: debug/download/debug-4.3.2.tgz}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: true
 
   /doctypes/1.1.0:
     resolution: {integrity: sha1-6oCxBqh1OHdOijpKWv4pPeSJ4Kk=, tarball: doctypes/download/doctypes-1.1.0.tgz}
@@ -438,6 +542,30 @@ packages:
   /estree-walker/2.0.2:
     resolution: {integrity: sha1-UvAQF4wqTBF6d1fP6UKtt9LaTKw=, tarball: estree-walker/download/estree-walker-2.0.2.tgz}
 
+  /fast-glob/3.2.7:
+    resolution: {integrity: sha1-/Wy3otfpqnp4RhEehaGW1rL3ZqE=, tarball: fast-glob/download/fast-glob-3.2.7.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.4
+    dev: true
+
+  /fastq/1.13.0:
+    resolution: {integrity: sha1-YWdg+Ip1Jr38WWt8q4wYk4w2uYw=, tarball: fastq/download/fastq-1.13.0.tgz}
+    dependencies:
+      reusify: 1.0.4
+    dev: true
+
+  /fill-range/7.0.1:
+    resolution: {integrity: sha1-GRmmp8df44ssfHflGYU12prN2kA=, tarball: fill-range/download/fill-range-7.0.1.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      to-regex-range: 5.0.1
+    dev: true
+
   /fsevents/2.3.2:
     resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, tarball: fsevents/download/fsevents-2.3.2.tgz}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -455,6 +583,18 @@ packages:
       function-bind: 1.1.1
       has: 1.0.3
       has-symbols: 1.0.2
+    dev: true
+
+  /glob-parent/5.1.2:
+    resolution: {integrity: sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=, tarball: glob-parent/download/glob-parent-5.1.2.tgz}
+    engines: {node: '>= 6'}
+    dependencies:
+      is-glob: 4.0.3
+    dev: true
+
+  /has-flag/4.0.0:
+    resolution: {integrity: sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=, tarball: has-flag/download/has-flag-4.0.0.tgz}
+    engines: {node: '>=8'}
     dev: true
 
   /has-symbols/1.0.2:
@@ -498,6 +638,23 @@ packages:
       object-assign: 4.1.1
     dev: true
 
+  /is-extglob/2.1.1:
+    resolution: {integrity: sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=, tarball: is-extglob/download/is-extglob-2.1.1.tgz}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /is-glob/4.0.3:
+    resolution: {integrity: sha1-ZPYeQsu7LuwgcanawLKLoeZdUIQ=, tarball: is-glob/download/is-glob-4.0.3.tgz}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      is-extglob: 2.1.1
+    dev: true
+
+  /is-number/7.0.0:
+    resolution: {integrity: sha1-dTU0W4lnNNX4DE0GxQlVUnoU8Ss=, tarball: is-number/download/is-number-7.0.0.tgz}
+    engines: {node: '>=0.12.0'}
+    dev: true
+
   /is-promise/2.2.2:
     resolution: {integrity: sha1-OauVnMv5p3TPB597QMeib3YxNfE=, tarball: is-promise/download/is-promise-2.2.2.tgz}
     dev: true
@@ -508,6 +665,11 @@ packages:
     dependencies:
       call-bind: 1.0.2
       has-tostringtag: 1.0.0
+    dev: true
+
+  /jiti/1.12.9:
+    resolution: {integrity: sha1-LORbJlz8jckevXClIEgHz5FSkbw=, tarball: jiti/download/jiti-1.12.9.tgz}
+    hasBin: true
     dev: true
 
   /js-stringify/1.0.2:
@@ -540,7 +702,23 @@ packages:
     resolution: {integrity: sha1-P0l9b9NMZpxnmNy4IfLvMfVEUFE=, tarball: magic-string/download/magic-string-0.25.7.tgz}
     dependencies:
       sourcemap-codec: 1.4.8
-    dev: false
+
+  /merge2/1.4.1:
+    resolution: {integrity: sha1-Q2iJL4hekHRVpv19xVwMnUBJkK4=, tarball: merge2/download/merge2-1.4.1.tgz}
+    engines: {node: '>= 8'}
+    dev: true
+
+  /micromatch/4.0.4:
+    resolution: {integrity: sha1-iW1Rnf6dsl/OlM63pQCRm/iB6/k=, tarball: micromatch/download/micromatch-4.0.4.tgz}
+    engines: {node: '>=8.6'}
+    dependencies:
+      braces: 3.0.2
+      picomatch: 2.3.0
+    dev: true
+
+  /ms/2.1.2:
+    resolution: {integrity: sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=, tarball: ms/download/ms-2.1.2.tgz}
+    dev: true
 
   /nanoid/3.1.30:
     resolution: {integrity: sha1-Y/k8xUjSoRPcXfvGO/oJ4rm2Q2I=, tarball: nanoid/download/nanoid-3.1.30.tgz}
@@ -558,6 +736,11 @@ packages:
 
   /picocolors/1.0.0:
     resolution: {integrity: sha1-y1vcdP8/UYkiNur3nWi8RFZKuBw=, tarball: picocolors/download/picocolors-1.0.0.tgz}
+
+  /picomatch/2.3.0:
+    resolution: {integrity: sha1-8fBh3o9qS/AiiS4tEoI0+5gwKXI=, tarball: picomatch/download/picomatch-2.3.0.tgz}
+    engines: {node: '>=8.6'}
+    dev: true
 
   /postcss/8.3.11:
     resolution: {integrity: sha1-w77KfqgRzV4cSj7G0udZnvH4+Fg=, tarball: postcss/download/postcss-8.3.11.tgz}
@@ -664,6 +847,10 @@ packages:
       pug-strip-comments: 2.0.0
     dev: true
 
+  /queue-microtask/1.2.3:
+    resolution: {integrity: sha1-SSkii7xyTfrEPg77BYyve2z7YkM=, tarball: queue-microtask/download/queue-microtask-1.2.3.tgz}
+    dev: true
+
   /request-light/0.5.4:
     resolution: {integrity: sha1-SXqYxtiuSVNkF6Xi1/ODuTTz44w=, tarball: request-light/download/request-light-0.5.4.tgz}
     dev: true
@@ -675,12 +862,23 @@ packages:
       path-parse: 1.0.7
     dev: true
 
+  /reusify/1.0.4:
+    resolution: {integrity: sha1-kNo4Kx4SbvwCFG6QhFqI2xKSXXY=, tarball: reusify/download/reusify-1.0.4.tgz}
+    engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+    dev: true
+
   /rollup/2.59.0:
     resolution: {integrity: sha1-EIxhsPoKN+vI0fFk8oFiIFbw21k=, tarball: rollup/download/rollup-2.59.0.tgz}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /run-parallel/1.2.0:
+    resolution: {integrity: sha1-ZtE2jae9+SHrnZW9GpIp5/IaQ+4=, tarball: run-parallel/download/run-parallel-1.2.0.tgz}
+    dependencies:
+      queue-microtask: 1.2.3
     dev: true
 
   /semver/7.3.5:
@@ -701,11 +899,24 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha1-6oBL2UhXQC5pktBaOO8a41qatMQ=, tarball: sourcemap-codec/download/sourcemap-codec-1.4.8.tgz}
-    dev: false
+
+  /supports-color/7.2.0:
+    resolution: {integrity: sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=, tarball: supports-color/download/supports-color-7.2.0.tgz}
+    engines: {node: '>=8'}
+    dependencies:
+      has-flag: 4.0.0
+    dev: true
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=, tarball: to-fast-properties/download/to-fast-properties-2.0.0.tgz}
     engines: {node: '>=4'}
+    dev: true
+
+  /to-regex-range/5.0.1:
+    resolution: {integrity: sha1-FkjESq58jZiKMmAY7XL1tN0DkuQ=, tarball: to-regex-range/download/to-regex-range-5.0.1.tgz}
+    engines: {node: '>=8.0'}
+    dependencies:
+      is-number: 7.0.0
     dev: true
 
   /token-stream/1.0.0:
@@ -721,6 +932,20 @@ packages:
   /upath/2.0.1:
     resolution: {integrity: sha1-UMc96mjW9rmQ9R0nnOYIFmXWGos=, tarball: upath/download/upath-2.0.1.tgz}
     engines: {node: '>=4'}
+    dev: true
+
+  /vite-plugin-windicss/1.4.12_vite@2.6.13:
+    resolution: {integrity: sha1-owH9VUQlBCtf2uxWK9EaWg/L8Xg=, tarball: vite-plugin-windicss/download/vite-plugin-windicss-1.4.12.tgz}
+    peerDependencies:
+      vite: ^2.0.1
+    dependencies:
+      '@windicss/plugin-utils': 1.4.12
+      chalk: 4.1.2
+      debug: 4.3.2
+      vite: 2.6.13
+      windicss: 3.2.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite/2.6.13:
@@ -888,6 +1113,12 @@ packages:
       '@vue/server-renderer': 3.2.21_vue@3.2.21
       '@vue/shared': 3.2.21
     dev: false
+
+  /windicss/3.2.0:
+    resolution: {integrity: sha1-13nPrOCa+vpMMeQfnCKds9ZrWAc=, tarball: windicss/download/windicss-3.2.0.tgz}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: true
 
   /with/7.0.2:
     resolution: {integrity: sha1-zO461ULSVTinp6gKrSErmChJW6w=, tarball: with/download/with-7.0.2.tgz}
