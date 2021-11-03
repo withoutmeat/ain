@@ -1,8 +1,8 @@
-import { defineConfig } from "vite-plugin-windicss";
+import { defineConfig } from 'vite-plugin-windicss'
 
 export default defineConfig({
   extract: {
-    include: ["src/**/*.{vue,html,jsx,tsx}"],
-    exclude: ["node_modules", ".git"],
+    include: ['src/**/*.{vue,html,jsx,tsx}'],
+    exclude: ['node_modules', '.git'],
   },
-});
+})
