@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^16.11.6
   '@typescript-eslint/eslint-plugin': ^5.3.0
   '@typescript-eslint/parser': ^5.3.0
   '@vitejs/plugin-vue': ^1.9.3
@@ -11,6 +12,7 @@ specifiers:
   eslint-plugin-import: ^2.25.2
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.0.3
+  pinia: ^2.0.0
   prettier: ^2.4.1
   typescript: ^4.4.4
   vite: ^2.6.4
@@ -22,9 +24,12 @@ specifiers:
   windicss: ^3.2.0
 
 dependencies:
+  pinia: 2.0.0_typescript@4.4.4+vue@3.2.21
   vue: 3.2.21
+  vue-router: 4.0.12_vue@3.2.21
 
 devDependencies:
+  '@types/node': 16.11.6
   '@typescript-eslint/eslint-plugin': 5.3.0_f8873316f48f7781ccc3e081fc76e214
   '@typescript-eslint/parser': 5.3.0_eslint@8.1.0+typescript@4.4.4
   '@vitejs/plugin-vue': 1.9.4_vite@2.6.13
@@ -40,7 +45,6 @@ devDependencies:
   vite: 2.6.13
   vite-plugin-pages: 0.18.2_vite@2.6.13
   vite-plugin-windicss: 1.4.12_vite@2.6.13
-  vue-router: 4.0.12_vue@3.2.21
   vue-tsc: 0.3.0_typescript@4.4.4
   windicss: 3.2.0
 
@@ -421,6 +425,10 @@ packages:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=, tarball: '@types/json5/download/@types/json5-0.0.29.tgz'}
     dev: true
 
+  /@types/node/16.11.6:
+    resolution: {integrity: sha1-a+96KgrWhM9ukPz+Mc7KvZzgo64=, tarball: '@types/node/download/@types/node-16.11.6.tgz'}
+    dev: true
+
   /@types/throttle-debounce/2.1.0:
     resolution: {integrity: sha1-HD32JL/Eti+ZLTASuExW1B6rN3Y=, tarball: '@types/throttle-debounce/download/@types/throttle-debounce-2.1.0.tgz'}
     dev: true
@@ -661,7 +669,7 @@ packages:
 
   /@vue/devtools-api/6.0.0-beta.19:
     resolution: {integrity: sha1-+OiAWdqkJFFZkkJqDH6lzeB+mb8=, tarball: '@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.19.tgz'}
-    dev: true
+    dev: false
 
   /@vue/reactivity/3.2.21:
     resolution: {integrity: sha1-BzrRRBku14oH4VHpWjuqUV5AmaI=, tarball: '@vue/reactivity/download/@vue/reactivity-3.2.21.tgz'}
@@ -2202,6 +2210,24 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /pinia/2.0.0_typescript@4.4.4+vue@3.2.21:
+    resolution: {integrity: sha1-asd696T/LiyHpZZ7WqK+jgSGjzg=, tarball: pinia/download/pinia-2.0.0.tgz}
+    peerDependencies:
+      '@vue/composition-api': ^1.2.4
+      typescript: ^4.4.4
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.19
+      typescript: 4.4.4
+      vue: 3.2.21
+      vue-demi: 0.12.0_vue@3.2.21
+    dev: false
+
   /pkg-dir/2.0.0:
     resolution: {integrity: sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=, tarball: pkg-dir/download/pkg-dir-2.0.0.tgz}
     engines: {node: '>=4'}
@@ -2777,6 +2803,21 @@ packages:
       vscode-typescript-languageservice: 0.27.25
     dev: true
 
+  /vue-demi/0.12.0_vue@3.2.21:
+    resolution: {integrity: sha1-sgKgHN/GNUQ+QfrqaX1iTKrA+nM=, tarball: vue-demi/download/vue-demi-0.12.0.tgz}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.21
+    dev: false
+
   /vue-eslint-parser/8.0.1_eslint@8.1.0:
     resolution: {integrity: sha1-JeCLIKQUVRUx8+GfmZkC4ez0XxM=, tarball: vue-eslint-parser/download/vue-eslint-parser-8.0.1.tgz}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -2802,7 +2843,7 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.0.0-beta.19
       vue: 3.2.21
-    dev: true
+    dev: false
 
   /vue-tsc/0.3.0_typescript@4.4.4:
     resolution: {integrity: sha1-Ozhyv08dLkQJtXrb2CYDLiU9tAY=, tarball: vue-tsc/download/vue-tsc-0.3.0.tgz}
